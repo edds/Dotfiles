@@ -1,0 +1,52 @@
+" My vim.rc file
+
+" Enable Syntax Highlighting and set up some tab rules
+syntax enable
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set ai
+set shiftround
+filetype plugin indent on
+
+" Line numbers in the column please
+set number
+
+" Terminal.app mainly ignores this but it makes everything pretty
+colorscheme ir_black 
+
+" Disable the arrow keys. Lets do this properly
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+" Highligh search results
+set hlsearch
+set ignorecase
+
+" always show me my ruler
+set ruler
+
+" context makes me happy.
+set scrolloff=7
+
+" matching brackets highlighting
+set showmatch
+
+" show invisibles so i can delete tabs and stick to spaces
+set list
+
+" make navigating tabs like navigating window splits
+noremap <C-t>k :tabr<CR>
+noremap <C-t>j :tabl<CR>
+noremap <C-t>h :tabp<CR>
+noremap <C-t>l :tabn<CR>
+
+" Adam tells me CommandT makes the world happier?
+let g:CommandTMaxHeight=12

@@ -1,0 +1,30 @@
+[user]
+  email = edd@mintdigital.com
+  name = Edd Sowden
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = blue
+  local = yellow 
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[push]
+  default = tracking
+[alias]
+  ignore = update-index --assume-unchanged
+  ignored = !git ls-files -v | grep ^[a-z]
+[core]
+  excludesfile = ~/.gitignore
+[diff]
+  tool = opendiff
+  guitool = opendiff

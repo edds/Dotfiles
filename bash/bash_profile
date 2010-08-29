@@ -1,0 +1,61 @@
+PATH=$PATH:/usr/local/sbin
+
+alias vi='/usr/local/Cellar/macvim/HEAD/MacVim.app/Contents/MacOS/Vim'
+alias vim='/usr/local/Cellar/macvim/HEAD/MacVim.app/Contents/MacOS/Vim'
+
+alias gs='git status'
+alias git='hub'
+alias console='./script/console'
+alias update='~/Documents/update.sh'
+
+_get_project_names(){
+  local cur prev base
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  local names=$(for x in `ls -d1 /Users/$USER/Projects/*`; do echo ${x/\/Users\/$USER\/Projects\//} ; done)
+  COMPREPLY=( $(compgen -W "${names}" -- ${cur}) )
+}
+
+t(){ tail -f /Users/$USER/Projects/$1/log/development.log; }
+c(){ cd /Users/$USER/Projects/$1 && ./script/console; }
+p(){ cd /Users/$USER/Projects/$1; }
+o(){ open /Users/$USER/Projects/$1; }
+
+complete -F _get_project_names t
+complete -F _get_project_names c
+complete -F _get_project_names p
+complete -F _get_project_names o
+
+g(){ rake routes | grep $1; }
+
+source /Users/$USER/.git_completion
+
+bp() { ssh mint@briarpatch-0${1}.vm.brightbox.net -l mint; }
+by() { ssh mint@briaryear-0${1}.vm.brightbox.net -l mint; }
+
+export CLICOLOR=1
+export COLOR_NC='\033[0m' # No Color
+export COLOR_WHITE='\033[1;37m'
+export COLOR_BLACK='\033[0;30m'
+export COLOR_BLUE='\033[0;34m'
+export COLOR_LIGHT_BLUE='\033[1;34m'
+export COLOR_GREEN='\033[0;32m'
+export COLOR_LIGHT_GREEN='\033[1;32m'
+export COLOR_CYAN='\033[0;36m'
+export COLOR_LIGHT_CYAN='\033[1;36m'
+export COLOR_RED='\033[0;31m'
+export COLOR_LIGHT_RED='\033[1;31m'
+export COLOR_PURPLE='\033[0;35m'
+export COLOR_LIGHT_PURPLE='\033[1;35m'
+export COLOR_BROWN='\033[0;33m'
+export COLOR_YELLOW='\033[1;33m'
+export COLOR_GRAY='\033[0;30m'
+export COLOR_LIGHT_GRAY='\033[0;37m'
+
+
+export PS1="\[${COLOR_GREEN}\]\W > \[${COLOR_NC}\]"
+echo -ne "${COLOR_GRAY}Uptime: "; uptime
+
+
+if [[ -s /Users/edd/.rvm/scripts/rvm ]] ; then source /Users/edd/.rvm/scripts/rvm ; fi
