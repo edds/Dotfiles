@@ -16,22 +16,13 @@ set number
 " Terminal.app mainly ignores this but it makes everything pretty
 colorscheme ir_black 
 
-" Disable the arrow keys. Lets do this properly
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
-
 " Highligh search results
 set hlsearch
 set ignorecase
 
 " always show me my ruler
 set ruler
+set laststatus=2
 
 " context makes me happy.
 set scrolloff=7
