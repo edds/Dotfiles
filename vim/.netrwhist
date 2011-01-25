@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/edd/Projects/fox-mobile/app/views/bace_wap'
-let g:netrw_dirhist_2='/Users/edd/Projects/fox-mobile'
-let g:netrw_dirhist_3='/Users/edd/Projects/fox-mobile/log'
-let g:netrw_dirhist_4='/Users/edd/Projects/fox-mobile/test/integration'
-let g:netrw_dirhist_5='/Users/edd/Projects/fox-mobile/public/stylesheets'
-let g:netrw_dirhist_6='/Users/edd/Projects/docfest/config/deploy'
