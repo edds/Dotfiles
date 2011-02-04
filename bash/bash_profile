@@ -1,7 +1,9 @@
 PATH=$PATH:/usr/local/sbin
 
-alias vi='/usr/local/Cellar/macvim/HEAD/MacVim.app/Contents/MacOS/Vim'
-alias vim='/usr/local/Cellar/macvim/HEAD/MacVim.app/Contents/MacOS/Vim'
+if [ -d '/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/' ]; then
+  alias vi='/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim'
+  alias vim='/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim'
+fi
 
 alias gits='git status'
 alias git='hub'
