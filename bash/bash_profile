@@ -37,6 +37,10 @@ source /Users/$USER/.git_completion
 bp() { ssh mint@briarpatch-0${1}.vm.brightbox.net -l mint; }
 by() { ssh mint@briaryear-0${1}.vm.brightbox.net -l mint; }
 
+[[ $TERM == "screen" ]] && export -p TERM="screen-256color"
+
+alias ta='tmux attach'
+
 export CLICOLOR=1
 export COLOR_NC='\033[0m' # No Color
 export COLOR_WHITE='\033[1;37m'
@@ -56,27 +60,7 @@ export COLOR_YELLOW='\033[1;33m'
 export COLOR_GRAY='\033[0;30m'
 export COLOR_LIGHT_GRAY='\033[0;37m'
 
-#git_status(){
-#echo $1
-#  if [ "$(cd $1 && git status 2> /dev/null)" == "" ]; then 
-#  echo "$(pwd)"
-#    echo ${COLOR_GREEN}
-#  else
-#    echo ${COLOR_PURPLE}
-#  fi
-#}
-#export PS1="$(git_status "\w")\W > \[${COLOR_NC}\]"
- 
-git_status_color (){
-  if git status -s 2>/dev/null >&2
-  then
-    echo -ne ${COLOR_PURPLE}
-  else
-    echo -ne ${COLOR_GREEN}
-  fi
-}
-
 PS1="\[${COLOR_GREEN}\]\W > \[${COLOR_NC}\]"
-echo -ne "${COLOR_GRAY}Uptime: "; uptime
+echo -ne "${COLOR_LIGHT_GRAY}Uptime: "; uptime
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

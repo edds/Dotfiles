@@ -185,7 +185,7 @@ if &t_Co > 255
 
    hi Statement       ctermfg=161               cterm=bold
    hi StatusLine      ctermfg=238 ctermbg=253
-   hi StatusLineNC    ctermfg=244 ctermbg=232
+   hi StatusLineNC    ctermfg=238 ctermbg=253
    hi StorageClass    ctermfg=208
    hi Structure       ctermfg=81
    hi Tag             ctermfg=161
@@ -196,16 +196,16 @@ if &t_Co > 255
    hi Type            ctermfg=81                cterm=none
    hi Underlined      ctermfg=244               cterm=underline
 
-   hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
+   hi VertSplit       ctermfg=238 ctermbg=238   cterm=bold
    hi VisualNOS                   ctermbg=238
    hi Visual                      ctermbg=235
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
-   hi Normal          ctermfg=252 ctermbg=233
+   hi Normal          ctermfg=252 ctermbg=232
    hi Comment         ctermfg=59
-   hi CursorLine                  ctermbg=234   cterm=none
-   hi CursorColumn                ctermbg=234
-   hi LineNr          ctermfg=250 ctermbg=234
-   hi NonText         ctermfg=250 ctermbg=234
+   hi CursorLine                  ctermbg=232   cterm=none
+   hi CursorColumn                ctermbg=232
+   hi LineNr          ctermfg=250 ctermbg=232
+   hi NonText         ctermfg=238 ctermbg=232
 end

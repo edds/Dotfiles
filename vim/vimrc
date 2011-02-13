@@ -14,7 +14,9 @@ filetype plugin indent on
 set number
 
 " Terminal.app mainly ignores this but it makes everything pretty
-colorscheme ir_black 
+let g:molokai_original = 1
+set t_Co=256
+colorscheme molokai
 
 " Highligh search results
 set hlsearch
