@@ -23,6 +23,7 @@
 [alias]
   ignore = update-index --assume-unchanged
   ignored = !git ls-files -v | grep ^[a-z]
+  s = status -s
 [core]
   excludesfile = ~/.gitignore
 [diff]
