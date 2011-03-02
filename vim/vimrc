@@ -35,6 +35,10 @@ set showmatch
 " show invisibles so i can delete tabs and stick to spaces
 set list
 
+" Show a gutter at 80 chars
+set textwidth=79
+set cc=+1
+
 " make navigating tabs like navigating window splits
 noremap <C-t>k :tabr<CR>
 noremap <C-t>j :tabl<CR>
