@@ -36,8 +36,14 @@ set showmatch
 set list
 
 " Show a gutter at 80 chars
-set textwidth=79
-set cc=+1
+if exists('+colorcolumn')
+  "set textwidth=79
+  "set formatoptions=cq
+  set colorcolumn=80
+end
+
+" Delete trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 
 " make navigating tabs like navigating window splits
 noremap <C-t>k :tabr<CR>

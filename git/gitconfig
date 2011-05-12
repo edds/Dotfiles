@@ -1,13 +1,17 @@
 [user]
   email = edd@mintdigital.com
   name = Edd Sowden
+[format]
+  pretty = [%h] %s%d - %an - %ad
+[log]
+  date = relative
 [color]
   branch = auto
   diff = auto
   status = auto
 [color "branch"]
   current = blue
-  local = yellow 
+  local = yellow
   remote = green
 [color "diff"]
   meta = yellow bold
@@ -24,8 +28,10 @@
   ignore = update-index --assume-unchanged
   ignored = !git ls-files -v | grep ^[a-z]
   s = status -s
+  hist = log --all --graph
 [core]
   excludesfile = ~/.gitignore
+  editor = /usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim
 [diff]
   tool = opendiff
   guitool = opendiff

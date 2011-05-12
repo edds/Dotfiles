@@ -22,4 +22,6 @@ IRB.conf[:AUTO_INDENT] = true
 if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
  require 'logger'
  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
+elsif defined? Rails
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
 end

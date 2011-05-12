@@ -36,6 +36,7 @@ source /Users/$USER/.git_completion
 
 bp() { ssh mint@briarpatch-0${1}.vm.brightbox.net -l mint; }
 by() { ssh mint@briaryear-0${1}.vm.brightbox.net -l mint; }
+ms() { ssh mint@mintstaging-0${1}.vm.brightbox.net -l mint; }
 
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 
