@@ -1,6 +1,6 @@
 [user]
   email = edd@mintdigital.com
-  name = Edd Sowden
+	name = Edd Sowden
 [format]
   pretty = [%h] %s%d - %an - %ad
 [log]

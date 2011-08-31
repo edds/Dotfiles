@@ -4,7 +4,7 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" Enable Syntax Highlighting and set up some tab rules
+" enable syntax highlighting and set up some tab rules
 syntax enable
 set softtabstop=2
 set tabstop=2
@@ -55,5 +55,6 @@ noremap <C-t>j :tabl<CR>
 noremap <C-t>h :tabp<CR>
 noremap <C-t>l :tabn<CR>
 
-" Adam tells me CommandT makes the world happier?
-let g:CommandTMaxHeight=12
+" map nerd commenter to something useful
+let g:NERDSpaceDelims = 1
+map <Leader>/ <plug>NERDCommenterSexy

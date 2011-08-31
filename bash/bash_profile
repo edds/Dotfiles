@@ -1,5 +1,3 @@
-PATH=$PATH:/usr/local/sbin
-
 if [ -d '/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/' ]; then
   alias vi='/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim'
   alias vim='/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim'
@@ -10,6 +8,7 @@ alias git='hub'
 alias console='./script/console'
 alias update='~/Documents/update.sh'
 alias rit='ruby -I test'
+alias cout='ack --css "\/\*\*\*"'
 
 _get_project_names(){
   local cur prev base
