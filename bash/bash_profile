@@ -4,7 +4,6 @@ if [ -d '/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/' ]; then
 fi
 
 alias gits='git status'
-alias git='hub'
 alias console='./script/console'
 alias update='~/Documents/update.sh'
 alias rit='ruby -I test'
