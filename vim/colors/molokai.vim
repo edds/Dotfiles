@@ -182,7 +182,7 @@ if &t_Co > 255
    hi SpecialComment  ctermfg=245               cterm=bold
    hi Special         ctermfg=81  ctermbg=232
    hi SpecialKey      ctermfg=245
-   hi ColorColumn                 ctermbg=233
+   hi ColorColumn                 ctermbg=234
 
    hi Statement       ctermfg=161               cterm=bold
    hi StatusLine      ctermfg=238 ctermbg=253
@@ -205,8 +205,8 @@ if &t_Co > 255
 
    hi Normal          ctermfg=252 ctermbg=232
    hi Comment         ctermfg=59
-   hi CursorLine                  ctermbg=232   cterm=none
+   hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=232
-   hi LineNr          ctermfg=250 ctermbg=232
+   hi LineNr          ctermfg=248 ctermbg=234
    hi NonText         ctermfg=238 ctermbg=232
 end

@@ -35,6 +35,7 @@ set scrolloff=7
 
 " matching brackets highlighting
 set showmatch
+set cursorline
 
 " show invisibles so i can delete tabs and stick to spaces
 set list
@@ -47,7 +48,7 @@ if exists('+colorcolumn')
 end
 
 " Delete trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+"autocmd BufWritePre * :%s/\s\+$//e
 
 " make navigating tabs like navigating window splits
 noremap <C-t>k :tabr<CR>
@@ -56,5 +57,5 @@ noremap <C-t>h :tabp<CR>
 noremap <C-t>l :tabn<CR>
 
 " map nerd commenter to something useful
-let g:NERDSpaceDelims = 1
-map <Leader>/ <plug>NERDCommenterSexy
+"let g:NERDSpaceDelims = 1
+"map <Leader>/ <plug>NERDCommenterSexy

@@ -1,6 +1,6 @@
-if [ -d '/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/' ]; then
-  alias vi='/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim'
-  alias vim='/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim'
+if [ -d '/usr/local/Cellar/macvim/7.3-62/MacVim.app/Contents/MacOS/' ]; then
+  alias vi='/usr/local/Cellar/macvim/7.3-62/MacVim.app/Contents/MacOS/Vim'
+  alias vim='/usr/local/Cellar/macvim/7.3-62/MacVim.app/Contents/MacOS/Vim'
 fi
 
 alias gits='git status'
@@ -61,5 +61,7 @@ export COLOR_LIGHT_GRAY='\033[0;37m'
 
 PS1="\[${COLOR_GREEN}\]\W > \[${COLOR_NC}\]"
 echo -ne "${COLOR_LIGHT_GRAY}Uptime: "; uptime
+
+export SVN_EDITOR=vim
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
