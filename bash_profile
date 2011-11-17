@@ -4,10 +4,10 @@ if [ -d '/usr/local/Cellar/macvim/7.3-62/MacVim.app/Contents/MacOS/' ]; then
 fi
 
 alias gits='git status'
-alias console='./script/console'
-alias update='~/Documents/update.sh'
-alias rit='ruby -I test'
 alias cout='ack --css "\/\*\*\*"'
+
+alias rit='ruby -I test'
+g(){ rake routes | grep $1; }
 
 _get_project_names(){
   local cur prev base
@@ -18,23 +18,12 @@ _get_project_names(){
   COMPREPLY=( $(compgen -W "${names}" -- ${cur}) )
 }
 
-t(){ tail -f /Users/$USER/Projects/$1/log/development.log; }
-c(){ cd /Users/$USER/Projects/$1 && ./script/console; }
 p(){ cd /Users/$USER/Projects/$1; }
-o(){ open /Users/$USER/Projects/$1; }
-
-complete -F _get_project_names t
-complete -F _get_project_names c
 complete -F _get_project_names p
-complete -F _get_project_names o
-
-g(){ rake routes | grep $1; }
 
 source /Users/$USER/.git_completion
 
-bp() { ssh mint@briarpatch-0${1}.vm.brightbox.net -l mint; }
-by() { ssh mint@briaryear-0${1}.vm.brightbox.net -l mint; }
-ms() { ssh mint@mintstaging-0${1}.vm.brightbox.net -l mint; }
+[[ -f "$HOME/.sshhosts" ]] && source $HOME/.sshhosts
 
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 
