@@ -14,15 +14,14 @@ _get_project_names(){
   COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
   prev="${COMP_WORDS[COMP_CWORD-1]}"
-  local names=$(for x in `ls -d1 /Users/$USER/Projects/*`; do echo ${x/\/Users\/$USER\/Projects\//} ; done)
+  local names=$(for x in `ls -d1 $HOME/Projects/*`; do echo ${x/$HOME\/Projects\//} ; done)
   COMPREPLY=( $(compgen -W "${names}" -- ${cur}) )
 }
 
-p(){ cd /Users/$USER/Projects/$1; }
+p(){ cd $HOME/Projects/$1; }
 complete -F _get_project_names p
 
-source /Users/$USER/.git_completion
-
+[[ -f "$HOME/.git_completion" ]] && source $HOME/.git_completion
 [[ -f "$HOME/.sshhosts" ]] && source $HOME/.sshhosts
 
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
