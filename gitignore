@@ -1,0 +1,22 @@
+# SVN
+.svn/*
+
+# OSX
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
+Icon?
+
+# Tags
+TAGS
+tags
+
+# Vi
+*.swo
+*.swp
+
+# Vim
+*.un~
+.*.sw[a-z]
+Session.vim
