@@ -31,7 +31,7 @@
   hist = log --all --graph
 [core]
   excludesfile = ~/.gitignore
-  editor = /usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim
+  editor = vim
 [diff]
   tool = opendiff
   guitool = opendiff
