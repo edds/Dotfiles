@@ -48,7 +48,7 @@ if exists('+colorcolumn')
 end
 
 " Delete trailing whitespace
-"autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " make navigating tabs like navigating window splits
 noremap <C-t>k :tabr<CR>
