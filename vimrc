@@ -24,6 +24,7 @@ colorscheme molokai
 
 " Highligh search results
 set hlsearch
+set incsearch
 set ignorecase
 
 " always show me my ruler
@@ -48,7 +49,7 @@ if exists('+colorcolumn')
 end
 
 " Delete trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\(\S\)\s\+$/\1/e
 
 " make navigating tabs like navigating window splits
 noremap <C-t>k :tabr<CR>
