@@ -60,3 +60,7 @@ noremap <C-t>l :tabn<CR>
 " map nerd commenter to something useful
 "let g:NERDSpaceDelims = 1
 "map <Leader>/ <plug>NERDCommenterSexy
+
+" code fold by indents but don't do it on file open
+set foldmethod=indent
+set nofoldenable

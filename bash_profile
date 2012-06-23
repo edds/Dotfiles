@@ -1,14 +1,21 @@
+# Switch VIM to the HomeBrew VIM if its installed
 if [ -d '/usr/local/Cellar/macvim/7.3-62/MacVim.app/Contents/MacOS/' ]; then
   alias vi='/usr/local/Cellar/macvim/7.3-62/MacVim.app/Contents/MacOS/Vim'
   alias vim='/usr/local/Cellar/macvim/7.3-62/MacVim.app/Contents/MacOS/Vim'
 fi
 
+# Version control updates
+export SVN_EDITOR=vim
 alias gits='git status'
-alias cout='ack --css "\/\*\*\*"'
+[[ -f "$HOME/.git_completion" ]] && source $HOME/.git_completion
 
-alias rit='ruby -I test'
-g(){ rake routes | grep $1; }
+# Shortcut for Tmux
+alias ta='tmux attach'
 
+# Fix for wonky TERM when using tmux
+[[ $TERM == "screen" ]] && export -p TERM="screen-256color"
+
+# Auto complete on project names for fast folder switching
 _get_project_names(){
   local cur prev base
   COMPREPLY=()
@@ -17,17 +24,22 @@ _get_project_names(){
   local names=$(for x in `ls -d1 $HOME/Projects/*`; do echo ${x/$HOME\/Projects\//} ; done)
   COMPREPLY=( $(compgen -W "${names}" -- ${cur}) )
 }
-
 p(){ cd $HOME/Projects/$1; }
 complete -F _get_project_names p
 
-[[ -f "$HOME/.git_completion" ]] && source $HOME/.git_completion
-[[ -f "$HOME/.sshhosts" ]] && source $HOME/.sshhosts
+# Ruby shortcuts
+alias rit='ruby -I test'
+g(){ rake routes | grep $1; }
 
-[[ $TERM == "screen" ]] && export -p TERM="screen-256color"
+# Various Ruby Managment Techniques
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-alias ta='tmux attach'
 
+# Let there be colours
 export CLICOLOR=1
 export COLOR_NC='\033[0m' # No Color
 export COLOR_WHITE='\033[1;37m'
@@ -47,9 +59,11 @@ export COLOR_YELLOW='\033[1;33m'
 export COLOR_GRAY='\033[0;30m'
 export COLOR_LIGHT_GRAY='\033[0;37m'
 
+# Short PS1 to keep things minimal
 PS1="\[${COLOR_GREEN}\]\W > \[${COLOR_NC}\]"
-echo -ne "${COLOR_LIGHT_GRAY}Uptime: "; uptime
 
-export SVN_EDITOR=vim
+# Tell me how long my machine has been on and the load averages
+if [ $TERM == 'xterm-256color' ]; then
+  echo -ne "${COLOR_LIGHT_GRAY}Uptime: "; uptime
+fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
