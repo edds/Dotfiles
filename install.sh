@@ -11,11 +11,11 @@ for name in *; do
   target="$HOME/.$name"
   if [ "$name" != 'install.sh' ]; then
     if [ -e "$target" ]; then
-      echo -e "${red}Deleting old $target${black}"
+      echo -e "${red}Deleting old file: $target${black}"
       rm "$target"
     fi
     if [ -L "$target" ]; then
-      echo -e "${red}Deleting old $target${black}"
+      echo -e "${red}Deleting old link: $target${black}"
       rm "$target"
     fi
     echo -e "${green}Creating $target${black}"
