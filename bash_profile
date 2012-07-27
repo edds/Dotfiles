@@ -16,15 +16,16 @@ alias ta='tmux attach'
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 
 # Auto complete on project names for fast folder switching
+export PROJECT_DIR=$HOME/govuk/
 _get_project_names(){
   local cur prev base
   COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
   prev="${COMP_WORDS[COMP_CWORD-1]}"
-  local names=$(for x in `ls -d1 $HOME/Projects/*`; do echo ${x/$HOME\/Projects\//} ; done)
+  local names=$(find $PROJECT_DIR -maxdepth 1 -mindepth 1 | sed -e "s|$PROJECT_DIR||g")
   COMPREPLY=( $(compgen -W "${names}" -- ${cur}) )
 }
-p(){ cd $HOME/Projects/$1; }
+p(){ cd $PROJECT_DIR$1; }
 complete -F _get_project_names p
 
 # Ruby shortcuts
@@ -62,8 +63,12 @@ export COLOR_LIGHT_GRAY='\033[0;37m'
 # Short PS1 to keep things minimal
 PS1="\[${COLOR_GREEN}\]\W > \[${COLOR_NC}\]"
 
+# Colour ls
+alias ls='ls --color'
+
 # Tell me how long my machine has been on and the load averages
 if [ $TERM == 'xterm-256color' ]; then
   echo -ne "${COLOR_LIGHT_GRAY}Uptime: "; uptime
 fi
 
+export DISPLAY=:99

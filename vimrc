@@ -1,8 +1,7 @@
 " My vim.rc file
 
 " Pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
 
 " enable syntax highlighting and set up some tab rules
 syntax enable
