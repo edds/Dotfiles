@@ -1,3 +1,7 @@
 --type-add=ruby=.haml
 --type-add=css=.scss
+--type-set=csv=.csv
+--type-set=cucumber=.feature
+--type-add=ruby=.builder
+--nocsv
 --pager=less -R
