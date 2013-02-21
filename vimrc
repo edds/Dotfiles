@@ -63,3 +63,6 @@ noremap <C-t>l :tabn<CR>
 " code fold by indents but don't do it on file open
 set foldmethod=indent
 set nofoldenable
+
+" enable backspacing to the begining
+set backspace=indent,eol,start

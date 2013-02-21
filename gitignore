@@ -20,3 +20,5 @@ tags
 *.un~
 .*.sw[a-z]
 Session.vim
+
+edd-bin/*
