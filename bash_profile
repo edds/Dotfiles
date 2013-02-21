@@ -69,4 +69,7 @@ if [ $TERM == 'xterm-256color' ]; then
   echo -ne "${COLOR_LIGHT_GRAY}Uptime: "; uptime
 fi
 
+# Add .bin files to the path
+export PATH="$HOME/.bin:$PATH"
+
 export DISPLAY=:99
