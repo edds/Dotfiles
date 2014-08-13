@@ -3,5 +3,7 @@
 --type-set=csv=.csv
 --type-set=cucumber=.feature
 --type-add=ruby=.builder
+--type-set=javascript=.json
+--type-set=puppet=pp
 --nocsv
 --pager=less -R
