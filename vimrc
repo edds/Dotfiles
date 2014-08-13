@@ -66,3 +66,15 @@ set nofoldenable
 
 " enable backspacing to the begining
 set backspace=indent,eol,start
+
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = { 'dir': '\.git$\|log$\|tmp$' }
+
+" ensure new lines at the end of files
+set eol
+
+" md files are markdown files
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" turn on spell checking for some file types
+autocmd FileType gitcommit,text,markdown setlocal spell

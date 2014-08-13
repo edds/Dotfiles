@@ -184,6 +184,11 @@ if &t_Co > 255
    hi SpecialKey      ctermfg=245
    hi ColorColumn                 ctermbg=234
 
+   hi SpellBad        ctermfg=232 ctermbg=161   cterm=underline
+   hi SpellCap        ctermfg=232 ctermbg=161   cterm=underline
+   hi SpellLocal      ctermfg=232 ctermbg=161   cterm=underline
+   hi SpellRare       ctermfg=232 ctermbg=161   cterm=underline
+
    hi Statement       ctermfg=161               cterm=bold
    hi StatusLine      ctermfg=238 ctermbg=253
    hi StatusLineNC    ctermfg=238 ctermbg=253
