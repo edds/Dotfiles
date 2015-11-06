@@ -16,7 +16,7 @@ alias ta='tmux attach'
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 
 # Auto complete on project names for fast folder switching
-export PROJECT_DIR=/var/govuk
+export PROJECT_DIR=~/Projects
 _get_project_names(){
   local cur prev base
   COMPREPLY=()
