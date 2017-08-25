@@ -73,3 +73,4 @@ fi
 export PATH="$HOME/.bin:$PATH"
 
 export DISPLAY=:99
+export PATH="/usr/local/sbin:$PATH"

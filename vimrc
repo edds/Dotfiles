@@ -68,7 +68,7 @@ set nofoldenable
 set backspace=indent,eol,start
 
 " Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = { 'dir': '\.git$\|log$\|tmp$' }
+let g:ctrlp_custom_ignore = { 'dir': '\.git$\|log$\|tmp$\|node_modules$' }
 
 " ensure new lines at the end of files
 set eol
@@ -78,3 +78,6 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " turn on spell checking for some file types
 autocmd FileType gitcommit,text,markdown setlocal spell
+
+let g:ale_lint_delay = 2000
+let g:ale_lint_on_text_changed = "insert"
