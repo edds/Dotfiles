@@ -79,5 +79,10 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 " turn on spell checking for some file types
 autocmd FileType gitcommit,text,markdown setlocal spell
 
-let g:ale_lint_delay = 2000
+let g:ale_lint_delay = 500
+let g:ale_cache_executable_check_failures = 1
 let g:ale_lint_on_text_changed = "insert"
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint']}

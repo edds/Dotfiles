@@ -12,6 +12,9 @@ alias gits='git status'
 # Shortcut for Tmux
 alias ta='tmux attach'
 
+# Alias for ag
+alias ag='ag --pager "less -R"'
+
 # Fix for wonky TERM when using tmux
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 
