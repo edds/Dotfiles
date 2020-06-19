@@ -68,13 +68,16 @@ set nofoldenable
 set backspace=indent,eol,start
 
 " Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = { 'dir': '\.git$\|log$\|tmp$\|node_modules$' }
+let g:ctrlp_custom_ignore = { 'dir': '\.git$\|log$\|tmp$\|node_modules$\|_build$' }
 
 " ensure new lines at the end of files
 set eol
 
 " md files are markdown files
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" use the silver searcher in ackvim
+let g:ackprg = 'ag --nopager --vimgrep'
 
 " turn on spell checking for some file types
 autocmd FileType gitcommit,text,markdown setlocal spell
@@ -84,5 +87,9 @@ let g:ale_cache_executable_check_failures = 1
 let g:ale_lint_on_text_changed = "insert"
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'javascript': ['eslint']}
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint'], 'elixir':['mix_format']}
+let g:ale_linters = {'javascript': ['eslint'], 'elixir':['elixir-ls','credo']}
+let g:ale_elixir_elixir_ls_release = $HOME . '/elixir-ls/rel'
+let g:ale_elixir_elixir_ls_config = { 'elixirLS': { 'dialyzerEnabled': v:false } }
+
+
