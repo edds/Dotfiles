@@ -22,4 +22,15 @@ compdef _get_project_names p
 # Short prompt to keep things minimal
 PROMPT='%F{green}%1d%f %# '
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 . $(brew --prefix asdf)/asdf.sh
+
+export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
+
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+export CLOUDSDK_PYTHON=/Users/edds/.asdf/installs/python/3.7.12/bin/python3
+
+export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
+

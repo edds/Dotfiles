@@ -3,7 +3,7 @@
 " Author: Tomas Restrepo <tomas@winterdom.com>
 "
 " Note: Based on the monokai theme for textmate
-" by Wimer Hazenberg and its darker variant 
+" by Wimer Hazenberg and its darker variant
 " by Hamish Stuart Macpherson
 "
 
@@ -190,7 +190,7 @@ if &t_Co > 255
    hi SpellRare       ctermfg=232 ctermbg=161   cterm=underline
 
    hi Statement       ctermfg=161               cterm=bold
-   hi StatusLine      ctermfg=238 ctermbg=253
+   hi StatusLine      ctermfg=199 ctermbg=253
    hi StatusLineNC    ctermfg=238 ctermbg=253
    hi StorageClass    ctermfg=208
    hi Structure       ctermfg=81
@@ -208,10 +208,10 @@ if &t_Co > 255
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
-   hi Normal          ctermfg=252 ctermbg=232
+   hi Normal          ctermfg=252 ctermbg=none gui=none
    hi Comment         ctermfg=59
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=232
    hi LineNr          ctermfg=248 ctermbg=234
-   hi NonText         ctermfg=238 ctermbg=232
+   hi NonText         ctermfg=238 ctermbg=none
 end
