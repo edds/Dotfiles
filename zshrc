@@ -27,6 +27,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 . $(brew --prefix asdf)/asdf.sh
 
 export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
+export PATH="/opt/homebrew/bin:${PATH}"
 
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"

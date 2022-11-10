@@ -76,6 +76,11 @@ set eol
 " md files are markdown files
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+au BufRead,BufNewFile mix.lock set filetype=elixir
+
+
 " use the silver searcher in ackvim
 let g:ackprg = 'ag --nopager --vimgrep'
 
@@ -87,9 +92,10 @@ let g:ale_cache_executable_check_failures = 1
 let g:ale_lint_on_text_changed = "insert"
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'javascript': ['eslint', 'prettier'], 'scss': ['prettier'], 'elixir':['mix_format']}
+let g:ale_fixers = {'javascript': ['eslint', 'prettier'], 'scss': ['prettier'], 'elixir':['mix_format'], 'eelixir':['mix_format']}
 let g:ale_linters = {'javascript': ['eslint'], 'elixir':['elixir-ls','credo']}
 let g:ale_elixir_elixir_ls_release = $HOME . '/Projects/elixir-ls/rel'
 let g:ale_elixir_elixir_ls_config = { 'elixirLS': { 'dialyzerEnabled': v:false } }
+let g:ale_completion_enabled = 1
 
 
