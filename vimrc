@@ -92,10 +92,14 @@ let g:ale_cache_executable_check_failures = 1
 let g:ale_lint_on_text_changed = "insert"
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'javascript': ['eslint', 'prettier'], 'scss': ['prettier'], 'elixir':['mix_format'], 'eelixir':['mix_format']}
-let g:ale_linters = {'javascript': ['eslint'], 'elixir':['elixir-ls','credo']}
+let g:ale_fixers = {'javascript': ['eslint', 'prettier'], 'scss': ['prettier'], 'elixir':['mix_format'], 'eelixir':['mix_format'], 'terraform':['terraform']}
+let g:ale_linters = {'javascript': ['eslint'], 'elixir':['elixir-ls','credo'], 'terraform':['terraform_lsp', 'terraform']}
 let g:ale_elixir_elixir_ls_release = $HOME . '/Projects/elixir-ls/rel'
 let g:ale_elixir_elixir_ls_config = { 'elixirLS': { 'dialyzerEnabled': v:false } }
+let g:ale_terraform_langserver_executable = 'terraform-ls'
 let g:ale_completion_enabled = 1
+
+inoremap <expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<C-g>u\<CR>"
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>\<C-y>" : "\<C-g>u\<TAB>"
 
 
